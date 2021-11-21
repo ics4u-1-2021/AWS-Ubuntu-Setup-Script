@@ -35,11 +35,6 @@ echo 'if [ -f $HOME/.bashrc ]; then' >> ~/.bash_profile
 echo '    source $HOME/.bashrc' >> ~/.bash_profile
 echo 'fi' >> ~/.bash_profile
 
-
-# load .gitconfig file
-echo Load .gitconfig file
-cp ./.gitconfig ~/.gitconfig
-
 # copy over shell script file
 echo Load shell script files
 mkdir ~/scripts
@@ -104,12 +99,6 @@ echo "--- Copying plugin to Vim bundles.."
 cp -r ./swift/utils/vim ~/.vim/pack/bundle/start/swift
 # echo "--- Cleaning up, removing swift repo.."
 # rm -rf ./swift/
-
-# load GitHub CLI
-echo load GitHub CLI
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
-sudo apt install gh
 
 # then remove the dot_files firectory 
 sudo rm -R ~/dot_files
