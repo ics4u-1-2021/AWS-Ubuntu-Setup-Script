@@ -111,6 +111,8 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
 sudo apt install gh
 
+# then remove the dot_files firectory 
+sudo rm -R ~/dot_files
 
 # reboot
 echo ---
@@ -119,20 +121,4 @@ echo ---
 sudo reboot now
 
 
-# after reboot, need to run the following by hand
 
-# provision GitHub
-ssh-keygen -t ed25519 -C "mr.coxall@mths.ca"
-eval "$(ssh-agent -s)"
-# then copy public key over to GitHub SSH keys
-cat ~/.ssh/id_ ... .pub
-# to test it out
-ssh -T git@github.com
-
-# configure GitHub CLI
-gh auth login
-# web method most likely the easiest
-# use existing GitHub SSH keys
-
-# then remove the dot_files firectory 
-sudo rm -R ~/dot_files
