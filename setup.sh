@@ -27,7 +27,8 @@ cp ./.vimrc ~/.vimrc
 echo Load .bashrc file
 > ~/.bashrc
 cp ./.bashrc ~/.bashrc
-# dircolors -b >> .bashrc
+
+# update the .bash_profile
 sudo chown ubuntu ~/.bash_profile
 echo '' >> ~/.bash_profile
 echo 'if [ -f $HOME/.bashrc ]; then' >> ~/.bash_profile
