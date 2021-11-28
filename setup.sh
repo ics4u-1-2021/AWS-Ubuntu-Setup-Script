@@ -105,6 +105,19 @@ cp -r ./swift/utils/vim ~/.vim/pack/bundle/start/swift
 # echo "--- Cleaning up, removing swift repo.."
 # rm -rf ./swift/
 
+# Node.js
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+echo "Confirm NVM is loaded"
+source ~/.bashrc
+command -v nvm
+nvm install node
+nvm install-latest-npm
+npm install -g typescript
+npm install -g ts-node
+# isntall EsLint
+npm install -g eslint
+
+
 # load GitHub CLI
 echo load GitHub CLI
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
