@@ -13,7 +13,7 @@ parse_git_branch () {
 }
 
 show_git_prompt () {
-  git branch 2>/dev/null 1>&2 && echo -e "-( \e[34;1m$(parse_git_branch)\e[31;1m )"
+  git branch 2>/dev/null 1>&2 && echo -e "-( \e[34;1m$(parse_git_branch)\e[34;1m )"
 }
 
 if [[ -n $(type -t git) ]] ; then
@@ -23,8 +23,8 @@ else
 fi
 
 PS1="
-\[\e[31;1m\]┌──[\[\e[39;1m\]\w\[\e[31;1m\]]$PS1
-\[\e[31;1m\]└─:\[\e[0m\]"
+\[\e[34;1m\]┌──[\[\e[39;1m\]\w\[\e[34;1m\]]$PS1
+\[\e[34;1m\]└─:\[\e[0m\]"
 
 # Display running command in GNU Screen window status
 #
