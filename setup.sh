@@ -13,6 +13,18 @@ echo Update and upgrade system
 sudo apt-get update -y
 sudo apt-get dist-upgrade -y
 
+# load .bashrc file and make it active
+echo Load .bashrc file
+> ~/.bashrc
+cp ./.bashrc ~/.bashrc
+# dircolors -b >> .bashrc
+sudo chown ubuntu ~/.bash_profile
+echo '' >> ~/.bash_profile
+echo 'if [ -f $HOME/.bashrc ]; then' >> ~/.bash_profile
+echo '    source $HOME/.bashrc' >> ~/.bash_profile
+echo 'fi' >> ~/.bash_profile
+source ~/.bashrc
+
 # load some programs
 echo Load programs
 sudo apt install tree
@@ -23,27 +35,19 @@ sudo apt-get -y install python3-pip
 echo Load .vimrc file
 cp ./.vimrc ~/.vimrc
 
-# load .bashrc file
-echo Load .bashrc file
-> ~/.bashrc
-cp ./.bashrc ~/.bashrc
-
-# update the .bash_profile
-sudo chown ubuntu ~/.bash_profile
-echo '' >> ~/.bash_profile
-echo 'if [ -f $HOME/.bashrc ]; then' >> ~/.bash_profile
-echo '    source $HOME/.bashrc' >> ~/.bash_profile
-echo 'fi' >> ~/.bash_profile
+# load .gitconfig file
+# echo Load .gitconfig file
+# cp ./.gitconfig ~/.gitconfig
 
 # copy over shell script file
 echo Load shell script files
 mkdir ~/scripts
 cp ./repo.sh ~/scripts/repo.sh
-sudo chmod +x ~/scripts/repo.sh
+chmod +x ~/scripts/repo.sh
 cp ./git-push.sh ~/scripts/git-push.sh
-sudo chmod +x ~/scripts/git-push.sh
+chmod +x ~/scripts/git-push.sh
 cp ./java-lint.sh ~/scripts/java-lint.sh
-sudo chmod +x ~/scripts/java-lint.sh
+chmod +x ~/scripts/java-lint.sh
 cp ./main.yml ~/scripts/main.yml
 cp ./swift.yml ~/scripts/swift.yml
 
@@ -63,6 +67,7 @@ sudo apt install default-jdk -y
 echo load CheckStyle for Java
 wget https://github.com/checkstyle/checkstyle/releases/download/checkstyle-8.44/checkstyle-8.44-all.jar
 cp ./checkstyle-8.44-all.jar ~/scripts/checkstyle.jar
+wget https://raw.githubusercontent.com/Mr-Coxall/dot_files/main/mr-coxall_checks.xml
 cp ./mr-coxall_checks.xml ~/scripts/
 
 
@@ -100,6 +105,18 @@ cp -r ./swift/utils/vim ~/.vim/pack/bundle/start/swift
 # echo "--- Cleaning up, removing swift repo.."
 # rm -rf ./swift/
 
+# load GitHub CLI
+echo load GitHub CLI
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository https://cli.github.com/packages
+sudo apt install gh
+
+# provision GitHub
+ssh-keygen -t ed25519 -C "mr.coxall@mths.ca"
+eval "$(ssh-agent -s)"
+# then copy public key over to GitHub SSH keys
+cat ~/.ssh/id_ed25519.pub
+
 # then remove the dot_files firectory 
 sudo rm -R ~/dot_files
 
@@ -110,4 +127,15 @@ echo ---
 sudo reboot now
 
 
+# after reboot, need to run the following by hand
 
+# provision GitHub
+# then copy public key over to GitHub SSH keys
+# cat ~/.ssh/id_ed25519.pub
+# to test it out
+ssh -T git@github.com
+
+# configure GitHub CLI
+gh auth login
+# web method most likely the easiest
+# use existing GitHub SSH keys
