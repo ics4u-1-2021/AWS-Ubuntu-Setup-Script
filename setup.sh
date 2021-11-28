@@ -126,6 +126,11 @@ npm install -g ts-node
 # isntall EsLint
 npm install -g eslint
 
+# update Git
+echo upgrade Git
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install -y git
 
 # load GitHub CLI
 echo load GitHub CLI
