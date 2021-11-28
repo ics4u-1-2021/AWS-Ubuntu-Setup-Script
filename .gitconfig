@@ -1,0 +1,11 @@
+[user]
+    name = ICS4U.1.2021
+    email = ics4u.1.2021@mths.ca
+[github]
+    user = ics4u-1-2021
+    token = token
+[core]
+    editor = vim
+    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+[color]
+    ui = auto
