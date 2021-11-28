@@ -106,7 +106,13 @@ cp -r ./swift/utils/vim ~/.vim/pack/bundle/start/swift
 # rm -rf ./swift/
 
 # install python linter
-sudo apt install -y black
+pip3 install black
+
+# install C++
+sudo apt install -y g++
+pip3 install cpplint
+echo '# for CPPLint' >> ~/.bashrc
+echo 'export PATH="${PATH}":/home/ubuntu/.local/bin' >> ~/.bashrc
 
 # Node.js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
