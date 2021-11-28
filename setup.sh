@@ -131,6 +131,9 @@ echo upgrade Git
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get install -y git
+cp ./.gitconfig ~/.gitconfig
+cp ./repo.sh ~/scripts/repo.sh
+chmod +x ~/scripts/repo.sh
 
 # load GitHub CLI
 echo load GitHub CLI
