@@ -118,11 +118,11 @@ eval "$(ssh-agent -s)"
 cat ~/.ssh/id_ed25519.pub
 
 # then remove the dot_files firectory 
-sudo rm -R ~/dot_files
+sudo rm -R ~/AWS-Ubuntu-Setup-Script
 
 # reboot
 echo ---
-read -p "Press [Enter] key to reboot ..."
+echo -- Rebooting Instance --
 echo ---
 sudo reboot now
 
