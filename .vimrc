@@ -5,6 +5,7 @@
 " Basic configurations
 set nocompatible        " don't try to be vi compatible
 set number              " turn on line numbers
+set relativenumber      " turn on relative numbers
 set encoding=utf-8      " set encoding to UTF-8 (default was "latin1")
 set showmatch           " highlight matching parentheses / brackets [{()}]
 set ruler               " show line and column number of the cursor on right side of statusline
