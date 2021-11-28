@@ -21,14 +21,13 @@ echo "# $1" >> README.md
 mkdir -p .github/workflows
 cd .github/workflows
 echo $2
-if [ $2 = "Swift" ]
-then
+if [ $2 = "Swift" ]; then
   cp ~/scripts/swift.yml ./swift.yml
   cd ../..
   echo "" >> ./README.md
   echo "[![SwiftLint](https://github.com/ics4u-1-2021/$1/workflows/SwiftLint/badge.svg)](https://github.com/ics4u-1-2021/$1/actions)" >> ./README.md
   git add .github/workflows/swift.yml
-elif [ $2 = "Java" ]
+elif [ $2 = "Java" ]; then
   cp ~/scripts/main.yml ./main.yml
   cd ../..
   echo "" >> ./README.md
