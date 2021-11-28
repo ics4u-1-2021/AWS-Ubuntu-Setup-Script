@@ -3,9 +3,6 @@
 # https://gist.github.com/specious/8244801
 # Fancy two-line prompt with git integration
 #
-# ┌───=[ specious :: sharp -( 0 )-[ ~ ]-( master )
-# └──(
-#
 
 parse_git_dirty () {
   [[ $(git status 2> /dev/null | tail -1) != "nothing to commit, working tree clean" ]] && echo "*"
@@ -26,8 +23,8 @@ else
 fi
 
 PS1="
-\[\e[31;1m\]┌───=[ \[\e[39;1m\]\u\[\e[31;1m\] :: \[\e[33;1m\]\h\[\e[31;1m\] ]-( \[\e[39;1m\]\j\[\e[31;1m\] )-[ \[\e[39;1m\]\w\[\e[31;1m\] ]$PS1
-\[\e[31;1m\]└──( \[\e[0m\]"
+\[\e[31;1m\]┌──[\[\e[39;1m\]\w\[\e[31;1m\]]$PS1
+\[\e[31;1m\]└─:\[\e[0m\]"
 
 # Display running command in GNU Screen window status
 #
