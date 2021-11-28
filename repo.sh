@@ -25,12 +25,12 @@ if [ $2 = "Swift" ]
 then
   cp ~/scripts/swift.yml ./swift.yml
   cd ../..
-  echo "[![SwiftLint](https://github.com/mr-coxall/$1/workflows/SwiftLint/badge.svg)](https://github.com/mr-coxall/$1/actions)" >> ./README.md
+  echo "[![SwiftLint](https://github.com/ics4u-1-2021/$1/workflows/SwiftLint/badge.svg)](https://github.com/ics4u-1-2021/$1/actions)" >> ./README.md
   git add .github/workflows/swift.yml
 else
   cp ~/scripts/main.yml ./main.yml
   cd ../..
-  echo "[![GitHub's Super Linter](https://github.com/mr-coxall/$1/workflows/GitHub's%20Super%20Linter/badge.svg)](https://github.com/mr-coxall/$1/actions)" >> ./README.md
+  echo "[![GitHub's Super Linter](https://github.com/ics4u-1-2021/$1/workflows/GitHub's%20Super%20Linter/badge.svg)](https://github.com/ics4u-1-2021/$1/actions)" >> ./README.md
   git add .github/workflows/main.yml
 fi
 
