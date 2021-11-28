@@ -105,6 +105,9 @@ cp -r ./swift/utils/vim ~/.vim/pack/bundle/start/swift
 # echo "--- Cleaning up, removing swift repo.."
 # rm -rf ./swift/
 
+# install python linter
+sudo apt install -y black
+
 # Node.js
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 echo "Confirm NVM is loaded"
