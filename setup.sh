@@ -131,8 +131,8 @@ npm install -g eslint typescript @typescript-eslint/parser @typescript-eslint/es
 
 # update Git
 echo upgrade Git
-sudo add-apt-repository ppa:git-core/ppa
-sudo apt-get update
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo apt-get -y update
 sudo apt-get install -y git
 cp ./.gitconfig ~/.gitconfig
 cp ./repo.sh ~/scripts/repo.sh
