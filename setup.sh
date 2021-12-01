@@ -115,16 +115,19 @@ echo '# for CPPLint' >> ~/.bashrc
 echo 'export PATH="${PATH}":/home/ubuntu/.local/bin' >> ~/.bashrc
 
 # Node.js
+# you might need to upgrade tp newer version: https://github.com/nvm-sh/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 echo "Confirm NVM is loaded"
+# you will want to update the .bash_profile, so the .bashrc automatically is executed
 source ~/.bashrc
 command -v nvm
 nvm install node
-nvm install-latest-npm
 npm install -g typescript
 npm install -g ts-node
+npm install -g prompt-sync
 # isntall EsLint
 npm install -g eslint
+npm install -g eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
 # update Git
 echo upgrade Git
