@@ -142,7 +142,7 @@ chmod +x ~/scripts/repo.sh
 echo load GitHub CLI
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 sudo apt-add-repository https://cli.github.com/packages
-sudo apt install gh
+sudo apt install -y gh
 
 # provision GitHub
 ssh-keygen -t ed25519 -C "mr.coxall@mths.ca"
