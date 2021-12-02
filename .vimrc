@@ -17,7 +17,11 @@ call plug#begin()
   Plug 'preservim/nerdtree'
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
+
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver']
 
 " Basic configurations
 set nocompatible        " don't try to be vi compatible
