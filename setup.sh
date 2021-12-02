@@ -124,7 +124,7 @@ command -v nvm
 nvm install node
 npm install -g typescript
 npm install -g ts-node
-npm install -g prompt-sync
+npm install prompt-sync # note: not global flag - does not work with it!
 # isntall EsLint
 npm install -g eslint
 npm install -g eslint typescript @typescript-eslint/parser @typescript-eslint/eslint-plugin
