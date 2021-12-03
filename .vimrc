@@ -18,7 +18,7 @@ call plug#begin()
   Plug 'pangloss/vim-javascript'
   Plug 'leafgarland/typescript-vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plugin 'valloric/youcompleteme'
+  " Plug 'valloric/youcompleteme'
 call plug#end()
 
 " CoC extensions
